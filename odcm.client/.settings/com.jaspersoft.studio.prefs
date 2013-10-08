@@ -1,0 +1,3 @@
+com.jaspersoft.studio.theme.ui.dark=gridColor\=255,255,255\npageMarginColor\=255,0,0\ncontainerMarginColor\=0,255,0\nelementDesignBorderColor\=255,255,0\npageBackground\=0,0,0\n
+com.jaspersoft.studio.theme.ui.light=gridColor\=192,192,192\npageMarginColor\=170,168,255\ncontainerMarginColor\=170,168,255\nelementDesignBorderColor\=0,0,0\npageBackground\=255,255,255\n
+eclipse.preferences.version=1
