@@ -22,7 +22,7 @@
  */
 
 
-package odcm.Functions;
+package odcm.logic.functions;
 
 
 import odcmdb.manager.DBM;

@@ -14,7 +14,7 @@
  *                   4) SHUTDOWN
  */ 
 
-package odcm.UDP;
+package odcm.connect.udp.server;
 
 
 import java.io.*;

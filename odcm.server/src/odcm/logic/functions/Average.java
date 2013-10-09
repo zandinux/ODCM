@@ -55,7 +55,7 @@
  */
 
 
-package odcm.Functions;
+package odcm.logic.functions;
 
 import odcmdb.Host;
 import odcmdb.Vms;

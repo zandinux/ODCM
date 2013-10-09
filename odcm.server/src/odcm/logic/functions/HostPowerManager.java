@@ -23,13 +23,13 @@
  * 
  */
 
-package odcm.Functions;
+package odcm.logic.functions;
 
 import odcmdb.Host;
 import odcmdb.manager.DBM;
 import odcmdb.manager.ReadDB;
 
-import odcm.UDP.ConnectToHost;
+import odcm.connect.udp.host.ConnectToHost;
 
 import java.io.IOException;
 import java.net.SocketException;

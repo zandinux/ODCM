@@ -29,9 +29,9 @@
  */
 
 
-package odcm.Functions;
+package odcm.logic.functions;
 
-import odcm.UDP.ConnectToHost;
+import odcm.connect.udp.host.ConnectToHost;
 
 import odcmdb.*;
 import odcmdb.manager.DBM;

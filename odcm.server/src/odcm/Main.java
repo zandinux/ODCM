@@ -29,9 +29,9 @@ import odcmdb.manager.DBM;
 import odcmdb.manager.JDBC;
 import odcmdb.manager.ReadDB;
 
-import odcm.Functions.Migrator;
-import odcm.Functions.HostPowerManager;
-import odcm.UDP.ConnectToHost;
+import odcm.logic.functions.Migrator;
+import odcm.logic.functions.HostPowerManager;
+import odcm.connect.udp.host.ConnectToHost;
 
 import java.io.IOException;
 import java.math.BigInteger;

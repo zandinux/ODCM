@@ -12,7 +12,7 @@
  * - Periorismo tou receive() se leitourgeia mono gia migrate
  */
 
-package odcm.UDP;
+package odcm.connect.udp.host;
 
 import java.io.*;
 import java.net.*;

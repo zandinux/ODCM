@@ -20,9 +20,9 @@ import odcmdb.Usage;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import odcm.UDP.EchoServer;
+import odcm.connect.udp.server.EchoServer;
 
-import odcm.Drivers.Xen;
+import odcm.drivers.Xen;
 import java.io.File;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicBoolean;
