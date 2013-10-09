@@ -18,7 +18,7 @@
  *
 */
 
-package odcm.drivers;
+package odcm.driver;
 
 
 import odcmdb.controller.exceptions.IllegalOrphanException;

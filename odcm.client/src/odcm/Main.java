@@ -22,7 +22,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import odcm.connect.udp.server.EchoServer;
 
-import odcm.drivers.Xen;
+import odcm.driver.Xen;
 import java.io.File;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicBoolean;
