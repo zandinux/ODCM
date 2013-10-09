@@ -33,13 +33,13 @@ public class JDBC
         
         if( CreteriaDecision.equals("HOST") )
         {
-            query = "SELECT Cpu FROM `Usage` WHERE Host_id = " + id;
+            query = "SELECT Cpu FROM `Usage` WHERE hostid = " + id;
             
             column = "Cpu";
         }
         else if( CreteriaDecision.equals("VM") )
         {     
-            query = "SELECT VCpu FROM `VMUsage` WHERE VMs_id = " + id;
+            query = "SELECT VCpu FROM `Vmusage` WHERE vmid = " + id;
             
             column = "VCpu";
         }
@@ -76,8 +76,8 @@ public class JDBC
         
         String query = "SELECT IF( h.MaxCores = u.Freecores, 'true', 'false' )"
                       +"FROM `Host` h, `Usage` u "
-                      +"WHERE h.id = u.Host_id "
-                      +"AND h.id = " + id;
+                      +"WHERE h.hostid = u.hostid "
+                      +"AND h.hostid = " + id;
         
         EntityManager entitymanager = DBM.emf.createEntityManager();
 

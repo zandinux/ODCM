@@ -45,11 +45,11 @@ public class JDBC
         while ( i < ListInActiveDomains.length )
         {
             query = "DELETE a.*, b.* "
-                  + "FROM VMUsage a "
-                  + "INNER JOIN VMs b "
-                  + "ON a.VMs_id = b.id "
+                  + "FROM Vmusage a "
+                  + "INNER JOIN Vms b "
+                  + "ON a.vmid = b.vmid "
                   + "WHERE b.VName = " + "'" + ListInActiveDomains[i] + "' "
-                  + "AND a.VMs_Host_id = " + host_id;
+                  + "AND a.hostid = " + host_id;
 
             stmt.executeUpdate(query);
             i++;
