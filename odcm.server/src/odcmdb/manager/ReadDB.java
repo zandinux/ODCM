@@ -25,12 +25,12 @@ public class ReadDB
     {
         String query = "SELECT h "
                      + "FROM Host h "
-                     + "WHERE h.id = :id";
+                     + "WHERE h.hostid = :hostid";
         
         
         
         Query q = DBM.getEm_host().createQuery( query )
-                                  .setParameter( "id", id );
+                                  .setParameter( "hostid", id );
 
 
         Host host = (Host) q.getSingleResult();
@@ -51,7 +51,7 @@ public class ReadDB
 
         String query = "SELECT h "
                      + "FROM Host h "
-                     + "WHERE h.id IN "
+                     + "WHERE h.hostid IN "
                      + "(SELECT u.hostid "
                      + "FROM Usage u "
                      + "WHERE u.state = :state)";
@@ -143,7 +143,7 @@ public class ReadDB
         
         String query =  "SELECT h "
                       + "FROM Host h "
-                      + "WHERE h.id IN "
+                      + "WHERE h.hostid IN "
                       + "(SELECT u.hostid "
                       + "FROM Usage u "
                       + "WHERE u.state = :state "
@@ -172,7 +172,7 @@ public class ReadDB
 
         String query =  "SELECT h "
                       + "FROM Host h "
-                      + "WHERE h.id IN "
+                      + "WHERE h.hostid IN "
                       + "(SELECT u.hostid "
                       + "FROM Usage u "
                       + "WHERE u.state = :state "
@@ -205,7 +205,7 @@ public class ReadDB
 
         String query =  "SELECT h "
                       + "FROM Host h "
-                      + "WHERE h.id IN "
+                      + "WHERE h.hostid IN "
                       + "(SELECT u.hostid "
                       + "FROM Usage u "
                       + "WHERE u.state = :state "
@@ -247,7 +247,7 @@ public class ReadDB
         }
         else if( CreteriaDecision.equals("VM") )
         {     
-            query = "SELECT VCpu FROM `VMUsage` WHERE VMs_id = " + id;
+            query = "SELECT VCpu FROM `Vmusage` WHERE vmid = " + id;
             
             column = "VCpu";
         }
