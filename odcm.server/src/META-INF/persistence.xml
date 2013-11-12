@@ -2,15 +2,15 @@
 <persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
   <persistence-unit name="ODCM_ServerPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>odcmdb.Usage</class>
-    <class>odcmdb.LogCpu</class>
     <class>odcmdb.Host</class>
+    <class>odcmdb.LogCpu</class>
+    <class>odcmdb.LogCpuPK</class>
     <class>odcmdb.LogVcpu</class>
-    <class>odcmdb.Vmusage</class>
+    <class>odcmdb.LogVcpuPK</class>
+    <class>odcmdb.Usage</class>
     <class>odcmdb.Vms</class>
     <class>odcmdb.VmsPK</class>
-    <class>odcmdb.LogCpuPK</class>
-    <class>odcmdb.LogVcpuPK</class>
+    <class>odcmdb.Vmusage</class>
     <class>odcmdb.VmusagePK</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ODCM_DB?zeroDateTimeBehavior=convertToNull"/>
