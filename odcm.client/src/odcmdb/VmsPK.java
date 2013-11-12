@@ -72,7 +72,7 @@ public class VmsPK implements Serializable {
 
     @Override
     public String toString() {
-        return "DataBase.VmsPK[ vmid=" + vmid + ", hostid=" + hostid + " ]";
+        return "odcmdb.VmsPK[ vmid=" + vmid + ", hostid=" + hostid + " ]";
     }
     
 }
