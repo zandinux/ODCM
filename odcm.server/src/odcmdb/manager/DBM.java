@@ -29,7 +29,7 @@ import javax.persistence.Persistence;
 public class DBM
 {
 
-    public static EntityManagerFactory emf = Persistence.createEntityManagerFactory("ODCM_ClientPU");
+    public static EntityManagerFactory emf = Persistence.createEntityManagerFactory("ODCM_ServerPU");
 
 
     private static HostJpaController host_ctrl = new HostJpaController( emf );

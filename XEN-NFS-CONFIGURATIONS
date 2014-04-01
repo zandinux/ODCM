@@ -1,0 +1,51 @@
+/etc/sysconfig/selinux ---> disabled
+
+XEN-FEDORA 19
+
+http://wiki.xen.org/wiki/Fedora_Host_Installation
+
+====================================
+
+NFS - Configuration Server:
+--------------------------
+1)install nfsv4
+
+2)sudo gedit /etc/idmapd.conf 
+	
+	#line 5 uncomment and change to your Domain Name
+	Domain = server.world
+
+3)sudo gedit /etc/exports -> (/direactory 192.168.0.0/24/mask(rw,,sync,no_subtree_check,no_root_squash))
+
+4)systemctl start rpcbind.service | systemctl start nfs-server.service | systemctl start nfs-lock.service | systemctl start nfs-idmap.service | systemctl enable rpcbind.service | systemctl enable nfs-server.service | systemctl enable nfs-lock.service | systemctl enable nfs-idmap.service 
+
+
+NFS - Configuration Client:
+--------------------------
+
+1)sudo gedit /etc/idmapd.conf (line 5 :Domain =)
+
+2) systemctl start rpcbind.service | systemctl start nfs-lock.service | systemctl start nfs-idmap.service | systemctl start netfs.service | systemctl enable rpcbind.service | systemctl enable nfs-lock.service | systemctl enable nfs-idmap.service | systemctl enable netfs.service 
+
+3) mount -t nfs4 ip-export:/directory-export /mount-point
+
+4)df -h
+
+====================================
+
+server: systemctl restart nfs-server.service
+
+client: systemctl restart netfs.service
+
+systemctl restart nfs-server.service | systemctl restart netfs.service
+
+====================================
+
+Manual mounts work, i.e. you can still do
+mkdir -p /mnt/tmp
+mount -t nfs `hostname`:/var/tmp /mnt/tmp
+====================================
+
+---
+/etc/hosts - specifie host names ith ips
+---

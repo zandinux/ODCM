@@ -36,15 +36,15 @@ import java.net.*;
 */
 import com.jezhumble.javasysmon.JavaSysMon;
 
-
 import java.math.BigInteger;
-
 import java.util.ArrayList;
-
 import java.util.List;
 import java.util.UUID;
 
 
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.libvirt.*;
 import org.libvirt.jna.*;
@@ -134,6 +134,10 @@ public class Xen
         else
         {
             System.out.println( "Success connected (XEN)" );
+            
+            System.out.println("XEN CONNECT TEST: " + xen.getHostName());
+            
+            System.out.println("XEN CONNECT TEST 2: " + xen.listDomains().length);
         }
         
 
@@ -316,15 +320,13 @@ public class Xen
     //Get and Update Host Usage
     private void HostUsage()
     {
-
         Usage usage = new Usage(); //Host Usage
 
         try
         {
             
             LocalDomain = xen.domainLookupByID( list_id[0] );
-
-            
+             
             //Import HD free memory******NOT NEED YET
             /*float freegb = hd.getFreeSpace()/1024/1024/1024;
 
@@ -340,7 +342,7 @@ public class Xen
                 usage.setState( getState( LocalDomain ) );
                 
                 usage.setCpu( CpuUsage( LocalDomain.getName(), MaxCores, tDomains ) );
-                              
+
                 //**FREECORES**
                 usage.setFreeCores( FreeCores() );
 
