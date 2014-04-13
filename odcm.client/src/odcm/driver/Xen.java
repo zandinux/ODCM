@@ -205,7 +205,7 @@ public class Xen
             }
             
             
-            /*if( this.tDomains > 1 ) 
+            if( this.tDomains > 1 ) 
             {
                 Vms();
             }
