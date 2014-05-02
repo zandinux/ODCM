@@ -951,23 +951,21 @@ public class Xen
                   )
                 {
                     
-                    DBM.getVmusage_ctrl().destroy( DelVM.get(i).getVmusage().getVmusagePK() );
-                    DBM.getVms_ctrl().destroy( DelVM.get(i).getVmsPK() );
-                    
+                                 
                     List<LogVcpu> Del_logVcpu = DelVM.get(i).getVmusage().getLogVcpuList();
                     
                     for(int l=0; l<Del_logVcpu.size(); l++)
                     {
                         DBM.getLogVcpu_ctrl().destroy( Del_logVcpu.get(l).getLogVcpuPK() );
-                    }                 
+                    }       
+                    
+                    DBM.getVmusage_ctrl().destroy( DelVM.get(i).getVmusage().getVmusagePK() );
+                    DBM.getVms_ctrl().destroy( DelVM.get(i).getVmsPK() );
                             
                 }
                 else if( ListInActiveDomains[j].equals("migrating-" + DelVM.get(i).getVName() ) )
                 {
 
-                    DBM.getVmusage_ctrl().destroy( DelVM.get(i).getVmusage().getVmusagePK() );
-                    DBM.getVms_ctrl().destroy( DelVM.get(i).getVmsPK() );
-                    
                     List<LogVcpu> Del_logVcpu = DelVM.get(i).getVmusage().getLogVcpuList();
                     
                     for(int l=0; l < Del_logVcpu.size(); l++)
@@ -975,6 +973,8 @@ public class Xen
                         DBM.getLogVcpu_ctrl().destroy( Del_logVcpu.get(l).getLogVcpuPK() );
                     }
                     
+                    DBM.getVmusage_ctrl().destroy( DelVM.get(i).getVmusage().getVmusagePK() );
+                    DBM.getVms_ctrl().destroy( DelVM.get(i).getVmsPK() );
                 }
                 
             }
