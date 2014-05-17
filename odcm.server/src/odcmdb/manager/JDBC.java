@@ -33,13 +33,13 @@ public class JDBC
         
         if( CreteriaDecision.equals("HOST") )
         {
-            query = "SELECT Cpu FROM `Usage` WHERE hostid = " + id;
+            query = "SELECT Cpu FROM `usage` WHERE Host_id = " + id;
             
             column = "Cpu";
         }
         else if( CreteriaDecision.equals("VM") )
         {     
-            query = "SELECT VCpu FROM `Vmusage` WHERE vmid = " + id;
+            query = "SELECT VCpu FROM `vmusage` WHERE Vmid = " + id;
             
             column = "VCpu";
         }
@@ -75,7 +75,7 @@ public class JDBC
         boolean result;
         
         String query = "SELECT IF( h.MaxCores = u.Freecores, 'true', 'false' )"
-                      +"FROM `Host` h, `Usage` u "
+                      +"FROM `host` h, `usage` u "
                       +"WHERE h.hostid = u.hostid "
                       +"AND h.hostid = " + id;
         

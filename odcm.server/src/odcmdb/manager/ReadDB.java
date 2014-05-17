@@ -77,7 +77,7 @@ public class ReadDB
 
         String query = "SELECT h "
                      + "FROM Host h "
-                     + "WHERE h.id IN "
+                     + "WHERE h.hostid IN "
                      + "(SELECT u.hostid "
                      + "FROM Usage u "
                      + "WHERE u.state = :state "
@@ -107,7 +107,7 @@ public class ReadDB
 
         String query = "SELECT h "
                      + "FROM Host h "
-                     + "WHERE h.id IN "
+                     + "WHERE h.hostid IN "
                      + "(SELECT u.hostid "
                      + "FROM Usage u "
                      + "WHERE u.state = :state "
@@ -239,13 +239,13 @@ public class ReadDB
         
         if( CreteriaDecision.equals("HOST") )
         {
-            query = "SELECT cpu FROM `Usage` WHERE hostid = :hostid";
+            query = "SELECT cpu FROM `usage` WHERE Host_id = :hostid";
             
             column = "Cpu";
         }
         else if( CreteriaDecision.equals("VM") )
         {     
-            query = "SELECT VCpu FROM `Vmusage` WHERE vmid = " + id;
+            query = "SELECT VCpu FROM `vmusage` WHERE Vmid = " + id;
             
             column = "VCpu";
         }
